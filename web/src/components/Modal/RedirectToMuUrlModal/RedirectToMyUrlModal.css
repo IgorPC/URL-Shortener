@@ -1,0 +1,20 @@
+.statistics-btn {
+    width: 100%;
+}
+
+.statistics-modal-footer {
+    padding: 10px;
+}
+
+.statistics-modal-box {
+    padding-top: 10px;
+}
+
+.statistics-modal-input-group {
+    padding: 20px;
+}
+
+.statistics-redirect-btn {
+    margin-top: 20px;
+    background-color: #00bafe !important;
+}

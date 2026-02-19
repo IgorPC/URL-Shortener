@@ -1,0 +1,27 @@
+.home-text {
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.shortener-input {
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: none;
+    background: white;
+    color: black;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.divider-footer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
