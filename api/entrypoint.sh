@@ -14,7 +14,7 @@ php artisan config:clear
 php artisan route:clear
 
 echo "Starting queues..."
-php artisan queue:work --verbose --tries=3 --timeout=90 &
+php artisan queue:listen --verbose --tries=3 --timeout=90 &
 
 echo "Running server..."
 php artisan serve --host=0.0.0.0 --port=8000
