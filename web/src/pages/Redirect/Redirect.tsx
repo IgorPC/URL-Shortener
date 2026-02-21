@@ -2,19 +2,17 @@ import {useParams} from 'react-router-dom';
 import {useEffect} from "react";
 import './Redirect.css';
 import type { RedirectPageParams } from "../../types/Params/RedirectPageParams.ts";
+import {clickAndRedirect} from "../../services/UrlShortenerService.ts";
 
 const Redirect = () => {
     const { id } = useParams<RedirectPageParams>();
 
     useEffect(() => {
         document.title = "Redirecting...";
+
         const fetchData = async () => {
-            //Simulate a request to the API then a redirect
             try {
-                setTimeout(() => {
-                    console.log(`Redirecting to ${id}`);
-                    // window.location.href = `redirect to the decoded url`;
-                }, 1000)
+                window.location.href = await clickAndRedirect(id)
             } catch (error) {
                 console.error("Error:", error);
             }
