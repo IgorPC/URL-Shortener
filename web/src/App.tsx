@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home.tsx';
 import Redirect from './pages/Redirect/Redirect.tsx';
-import Statistics from './pages/Statistics';
+import Statistics from './pages/Statistics/Statistics.tsx';
 import NotFound from "./pages/NotFound.tsx";
 import Error from "./pages/Error.tsx";
 import './App.css';

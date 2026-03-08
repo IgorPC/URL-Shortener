@@ -11,6 +11,8 @@ html, body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Inter', sans-serif;
 }
 
 .home-container {
@@ -18,8 +20,6 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    font-family: 'Inter', sans-serif;
     padding: 20px;
 }
 
