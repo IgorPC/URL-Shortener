@@ -25,3 +25,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+.invalid-link-alert {
+    padding: 10px;
+}

@@ -1,4 +1,4 @@
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {useEffect} from "react";
 import './Redirect.css';
 import type { RedirectPageParams } from "../../types/Params/RedirectPageParams.ts";
@@ -7,14 +7,22 @@ import {clickAndRedirect} from "../../services/UrlShortenerService.ts";
 const Redirect = () => {
     const { id } = useParams<RedirectPageParams>();
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         document.title = "Redirecting...";
 
         const fetchData = async () => {
             try {
-                window.location.href = await clickAndRedirect(id)
+                const response =  await clickAndRedirect(id);
+
+                if (typeof response === "string") {
+                    window.location.href = response;
+                }
+
+                navigate(`/inactive`);
             } catch (error) {
-                console.error("Error:", error);
+                navigate(`/error`);
             }
         };
         fetchData();
