@@ -15,9 +15,15 @@ class LinkRepository
         $this->link = $link;
     }
 
-    public function findByIdentifier(string $identifier): LinkDTO | null
+    public function findByIdentifier(string $identifier, bool $findInactive = false): LinkDTO | null
     {
-        $link = $this->link->where(['is_active' => true, 'short_url' => $identifier])->first();
+        $where = ['short_url' => $identifier];
+
+        if (! $findInactive) {
+            $where['is_active'] = true;
+        }
+
+        $link = $this->link->where($where)->first();
 
         if (! $link) {
             return null;

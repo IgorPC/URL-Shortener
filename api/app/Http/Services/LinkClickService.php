@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use App\Http\DTOs\PeriodDTO;
 use App\Http\DTOs\PersistClickDTO;
 use App\Http\Repositories\LinkClickRepository;
 use App\Jobs\PersistClickJob;
@@ -39,6 +40,5 @@ class LinkClickService
         } catch (\Exception $exception) {
             return;
         }
-
     }
 }

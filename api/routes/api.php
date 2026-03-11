@@ -6,3 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/link', [LinkController::class, 'create']);
 Route::post('/click', [LinkClickController::class, 'click']);
+Route::get('/link/statistics/{id}', [LinkController::class, 'statistics']);
