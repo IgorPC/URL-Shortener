@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import './Redirect.css';
 import type { RedirectPageParams } from "../../types/Params/RedirectPageParams.ts";
 import {clickAndRedirect} from "../../services/UrlShortenerService.ts";
+import type {ErrorDTO} from "../../types/DTOs/ErrorDTO.ts";
 
 const Redirect = () => {
     const { id } = useParams<RedirectPageParams>();
@@ -14,10 +15,11 @@ const Redirect = () => {
 
         const fetchData = async () => {
             try {
-                const response =  await clickAndRedirect(id);
+                const response: string | ErrorDTO =  await clickAndRedirect(id);
 
                 if (typeof response === "string") {
                     window.location.href = response;
+                    return;
                 }
 
                 navigate(`/inactive`);

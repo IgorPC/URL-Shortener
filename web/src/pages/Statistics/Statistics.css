@@ -9,3 +9,15 @@
 .select-period {
     padding: 10px;
 }
+
+.header-text {
+    color: oklch(0.75 0.17 350.59);
+}
+
+.link-text {
+    font-size: 16px;
+}
+
+.link-text:hover {
+    color: oklch(0.75 0.17 350.59);;
+}
